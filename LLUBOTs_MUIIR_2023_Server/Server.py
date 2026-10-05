@@ -123,8 +123,12 @@ ipMQTT = "localhost"
 port = 1883
 if (len(sys.argv) >= 2):
   ipMQTT =  sys.argv[1]
-if (len(sys.argv) >= 3):
-  port = sys.argv[2]
+if (len(sys.argv) >= 3): # >=3 porque len dice el número de elementos, y la forma del array de string es sys.argv = ["Server.py", "127.0.0.1", "8050"]
+  try:
+    port = int(sys.argv[2])
+  except ValueError:
+    print("Puerto MQTT inválido: " + sys.argv[2] + ". Usando 1883 por defecto.")
+    port = 1883
 
 #Ip localhost
 client.connect(ipMQTT,port, 60)
