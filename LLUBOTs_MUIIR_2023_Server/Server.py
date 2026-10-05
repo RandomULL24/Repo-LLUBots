@@ -119,8 +119,8 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 
-ipMQTT = "51.20.185.180"
-port = 1883
+ipMQTT = "127.0.0.1"
+port = 8050
 if (len(sys.argv) >= 2):
   ipMQTT =  sys.argv[1]
 if (len(sys.argv) >= 3):
