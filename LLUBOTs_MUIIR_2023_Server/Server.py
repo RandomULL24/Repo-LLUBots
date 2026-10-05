@@ -124,7 +124,11 @@ port = 1883
 if (len(sys.argv) >= 2):
   ipMQTT =  sys.argv[1]
 if (len(sys.argv) >= 3):
-  port = sys.argv[2]
+  try:
+    port = int(sys.argv[2])
+  except ValueError:
+    print("Puerto MQTT inválido: " + sys.argv[3] + ". Usando 1883 por defecto.")
+    port = 1883
 
 #Ip localhost
 client.connect(ipMQTT,port, 60)
