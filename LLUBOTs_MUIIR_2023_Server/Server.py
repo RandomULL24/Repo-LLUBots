@@ -119,14 +119,14 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 
-ipMQTT = "127.0.0.1"
-port = 8050
+ipMQTT = "localhost"
+port = 1883
 if (len(sys.argv) >= 2):
   ipMQTT =  sys.argv[1]
 if (len(sys.argv) >= 3):
   port = sys.argv[2]
 
-#IP del AWS de Jaime con el que vamos a trabajar
+#Ip localhost
 client.connect(ipMQTT,port, 60)
 
 client.loop_start()
