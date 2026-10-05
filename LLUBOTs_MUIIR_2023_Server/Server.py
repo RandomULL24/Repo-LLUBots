@@ -441,4 +441,4 @@ def update_store(childrenUS,childrenSL,data):
   
 if __name__ == '__main__':
   # practica3.PitayaSetUp()
-  app.run_server(debug=True,use_reloader=False)
+  app.run(debug=True, use_reloader=False)
